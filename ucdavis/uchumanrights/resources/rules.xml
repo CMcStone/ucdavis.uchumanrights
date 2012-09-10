@@ -1,0 +1,54 @@
+<rules
+    xmlns="http://namespaces.plone.org/diazo"
+    xmlns:css="http://namespaces.plone.org/diazo/css"
+    xmlns:xsl="http://www.w3.org/1999/XSL/Transform">
+
+    <theme href="index2.html" css:if-content="#body.section-news" />
+    <theme href="index2.html" css:if-content="body.section-people" />
+    <theme href="index.html" css:if-content="#visual-portal-wrapper" />
+    <replace content="/html/head/title" theme="/html/head/title" />
+    <replace content="/html/head/base" theme="/html/head/base" />
+    <replace content="/html/head/meta" theme="/html/head/meta" />
+    <prepend content='/html/head' theme='/html/head' />
+    <!-- Google Analytics JavaScript --> 
+	<after theme-children="/html/body" 
+	content="/html/body/div[@id='visual-portal-wrapper']/div/script" />
+    <copy attributes="class dir id" css:theme="body" css:content="body"/>
+    <replace css:theme-children="#logo h1">
+        <xsl:for-each css:select="a#portal-logo">
+          <xsl:value-of select="@title" />
+        </xsl:for-each>
+    </replace>
+    <prepend content='//*[@id="portal-searchbox"]' theme='//*[@id="page"]' />
+    <copy attributes="href title" css:content='#portal-logo' css:theme='#logo h1 a' />
+    <copy content='//*[@id="portal-globalnav"]' theme='//*[@id="mainmenu"]' />
+    <drop theme='//*[@id="main_search"]' />
+    
+    <drop theme='//*[@id="board"]' if-path="news" />
+    <drop theme='//*[@id="board"]' if-path="events" />
+	<drop theme='//*[@id="board"]' if-path="people" />
+	<drop theme='//*[@id="board"]' if-path="graduate" />
+	<drop theme='//*[@id="board"]' if-path="undergraduate" />
+	<drop theme='//*[@id="board"]' if-path="contact" />
+	<drop theme='//*[@id="board"]' if-path="alumni" />
+    
+    <drop attributes="id" css:content="#portal-globalnav"/>
+    <copy content='//*[@id="carousel-2680029003"]' theme='//*[@id="bd-content-highlight-areas"]' />
+	<prepend content='//*[@id="portal-personaltools-wrapper"]' theme='//*[@id="logo"]' />
+	<prepend content='//*[@id="edit-bar"]' theme='//*[@id="body_top"]' />
+	<prepend content='//*[@id="portal-breadcrumbs"]' theme='//*[@id="body_top"]'  />
+	<copy css:content-children="#content" css:theme="#content"/>
+	<append css:content="#viewlet-below-content" css:theme="#page"/>
+
+	<drop theme='//*[@id="sidebar"]' if-path="/people" />
+    
+
+    <copy content-children='//*[@id="portal-column-one"]' theme='//*[@id="sidebar"]' />
+    <copy content-children='//*[@id="portal-column-two"]' theme='//*[@id="sidebar_right"]' />
+    
+    <drop theme='//*[@id="footer_logo"]' />
+    <drop theme='//*[@id="footer_info"]' />
+    <append content='//*[@id="portal-footer"]' theme='//*[@id="footer"]' />
+    <append content='//*[@id="portal-siteactions"]' theme='//*[@id="footer"]' />
+   
+</rules>

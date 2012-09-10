@@ -1,0 +1,331 @@
+/*
+ *  This is the file where you put your CSS changes. 
+ *  You should preferrably use this and override the 
+ *  relevant properties you want to change here instead 
+ *  of customizing plone.css to survive upgrades. Writing
+ *  your own plone.css only makes sense for very heavy 
+ *  customizations. Useful variables from Plone are 
+ *  documented at the bottom of this file.
+ */
+ 
+/* <dtml-with base_properties> (do not remove this :) */
+/* <dtml-call "REQUEST.set('portal_url', portal_url())"> (not this either :) */
+
+
+/* DELETE THIS LINE AND PUT YOUR CUSTOM STUFF HERE */
+
+
+/*  Top of Page Custom CSS */
+
+
+#visual-portal-wrapper {
+background-color: white;
+min-width: 900px;
+}
+
+  /* position the search gadget */
+
+#portal-searchbox {
+float: right;
+clear: right;
+background-color: transparent;
+margin: 1.5em 0 0 0;
+padding: 0 2em 2px 0;
+text-align: right;
+text-transform: lowercase;
+white-space: nowrap;
+z-index: 1;
+}
+
+#portal-header
+{background-color: #32508e;
+}
+#portal-logo {
+border: 0;
+margin: 0em 0em 0em 0em;
+
+}
+
+
+#portal-banner {
+background: url(&dtml-portal_url;/&dtml-bannerName;) no-repeat center;
+border: 0;
+margin: 0em 0em 0em 0;
+padding: 0;
+}
+
+#portal-banner a {
+display: block;
+text-decoration: none;
+overflow: hidden;
+border: 0;
+margin: 0;
+padding: 0;
+padding-top: <dtml-var "_[bannerName].height">px;
+height: 0px !important;
+width: <dtml-var "_[bannerName].width">px;
+cursor: pointer;
+}
+
+
+
+#portal-campusnav-1 {
+background-color: #1b305a;
+border-color: #d2b84c;
+border-top: solid;
+border-bottom: solid;
+border-color: white;
+padding: 1px 0em 1px 2em;
+white-space: nowrap;
+list-style: none;
+margin: 0;
+height: auto;
+line-height: normal;
+font-size: 12px;
+text-decoration: none;
+}
+#portal-campusnav-1 li {
+display: inline;
+}
+#portal-campusnav-1 li a {
+/* */
+color: #d2b84c;
+background-color: transparent;
+margin-right: 0.5em;
+padding: 3px 1.em;
+text-decoration: none;
+border-color: #d2b84c;
+border-style: none none none solid;
+border-width: 1px;
+padding: 2px 2px 2px 10px;
+}
+
+#portal-campusnav-1 li a.first-tab {
+border: none;
+}
+
+#portal-campusnav-1 li.selected a {
+/* */
+background-color: white;
+border: 1px solid #d2b84c;
+border-bottom: white 1px solid;
+color: #d2b84c;
+text-decoration: underline;
+}
+#portal-campusnav-1 li a:hover {
+color: #d2b84c;
+text-decoration: underline;
+}
+
+
+#portal-breadcrumbs{
+background-color: #d2b84c;
+color: #334258;
+text-transform: none;
+}
+
+
+/* Left Column Custom CSS */
+
+
+
+#portal-globalnav-1 {
+background-color: transparent;
+padding: 1px 0em 1px 0em;
+white-space: nowrap;
+list-style: none;
+margin: 0;
+height: auto;
+line-height: normal;
+font-size: 14px;
+text-decoration: none;
+}
+
+
+
+#portal-globalnav-1 li {
+color: #31508e;
+list-style: none;
+border-style: none none dashed none;
+border-width: 1px;
+height: auto;
+width: 9em;
+text-decoration: none;
+}
+
+#portal-globalnav-1 li a {
+/* */
+color: #31508e;
+background-color: transparent;
+margin-right: 0.5em;
+padding: 0em 1.25em;
+text-decoration: none;
+list-style: none;
+}
+
+#portal-globalnav-1 li a.first-tab {
+background-image: url(ucihr);
+background-repeat: no-repeat;
+background-position: left center;
+padding-left: 4em ;
+padding-top: px;
+list-style: none;
+}
+
+#portal-globalnav-1 li.selected a {
+color: #d2b84c;
+background-color: white;
+}
+
+#portal-globalnav-1 li a:hover {
+color: #d2b84c;
+}
+  /* GOLD SEAL */
+#portlet_se.portlet {
+padding: 5em 2px 5em 2px;
+}
+
+  /* Calendar */
+
+.ploneCalendar {
+background-color: #a0863a;
+color: #e5d699;
+font-weight: bold;
+}
+
+.ploneCalendar tr.weekdays
+{color: #a0863a;
+}
+
+.ploneCalendar th
+{color: #a0863a;
+}
+
+#thePloneCalendar 
+{margin: 3em 0em 4em 0em;
+}
+
+/*  Main Body Custom CSS */
+
+.documentFirstHeading {
+background-image: url(underlineHeader) ;
+background-repeat: no-repeat;
+background-position: center bottom;
+padding: 0px 0px 05px 0em;
+border: none;
+color: #d2b84c;
+text-align: center;
+}
+
+.documentByLine {
+visibility: hidden;
+}
+
+
+
+
+
+/* Bottom Of Page */
+
+#portal-footer{
+background-color: #1b305a;
+font-weight: bold;
+color: #d2b84c;
+}
+
+#portal-personaltools {
+margin: 0 1em 0 0;
+}
+
+
+#portal-siteactions {
+margin: 0em;
+}
+
+#portal-siteactions li a {
+border: none;
+margin-left: 2em;
+}
+
+#portal-siteactions li a:hover {
+border: none;
+margin-left: 2em;
+}
+/* </dtml-with> */
+
+/* DOCUMENTATION ON PRE-DEFINED PROPERTIES FROM PLONE */
+
+ /* You can insert colors and other variables from Plone's 
+    base_properties by doing:
+    
+    & dtml-variableName ; (without the spaces, excluded here to not make it render)
+    
+    Example:
+    
+    myLink {
+        color: & dtml-fontColor ;   (again, without the spaces)
+    }
+ 
+   This means you can generate your own elements that use Plone's defaults,
+   and respect any customizations people have done. See base_properties for
+   the default values.
+ 
+   These are the available properties:
+   
+   logoName - the file name of the portal logo
+   
+   fontFamily - the font family used for all text that is not headers
+   
+   fontBaseSize - the base font size that everything is calculated from
+   
+   fontColor - the main font color
+   
+   fontSmallSize - used for various elements like buttons and discreet text
+   
+   discreetColor - the font color of discreet text
+
+   backgroundColor - the background color 
+   
+   linkColor - the color used on normal links
+
+   linkActiveColor - color used on active links
+
+   linkVisitedColor - color used on visited links
+   
+   borderWidth - the width of most borders in Plone
+   
+   borderStyle - the style of the border lines, normally solid
+   
+   borderStyleAnnotations - style of border lines on comments etc
+   
+   globalBorderColor - the border color used on the main tabs, the portlets etc
+   
+   globalBackgroundColor - background color for the selected tabs, portlet headings etc
+   
+   globalFontColor - the color of the font in the tabs and in portlet headings
+   
+   headingFontFamily - font family for h1/h2/h3/h4/h5/h6 headlines
+   
+   contentViewBorderColor - the content view tabs border color
+   
+   contentViewBackgroundColor - the content view tabs background color
+   
+   contentViewFontColor - the font color used in the content view tabs
+   
+   inputFontColor - the font color used for input elements
+   
+   textTransform - whether to lowercase text in portlets, tabs etc.
+   
+   evenRowBackgroundColor - the background color of even rows in listings
+   
+   oddRowBackgroundColor - the background color of even rows in listings
+   
+   notifyBorderColor - border color of notification elements like the status message, the calendar focus
+   
+   notifyBackgroundColor - background color of notification elements like the status message, the calendar focus
+   
+   helpBackgroundColor - background color of information pop-ups (currently not used)
+          
+ */
+
+
