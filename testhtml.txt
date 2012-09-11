@@ -1,0 +1,19 @@
+<table width="100%">
+    <tbody><tr>
+      <td id="tablelogo" width="250px"> 
+        <h1 id="portal-logo">
+<a href="http://uchumanrights.ucdavis.edu/"><img src="images/logo.jpg"></a>
+</h1> 
+      </td> 
+
+      <td id="tablebanner">
+        <h1 id="portal-banner">
+<a href="http://uchumanrights.ucdavis.edu/"><img src="images/banner.jpg"></a>
+</h1>
+        
+      </td>
+      <td id="tableclear" width="250px">
+                      
+      </td>
+     </tr>
+    </tbody></table>
